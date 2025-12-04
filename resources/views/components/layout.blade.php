@@ -6,7 +6,7 @@
         <title>{{ $title ?? "Customs inspection" }}</title>
         @vite('resources/css/app.css')
     </head>
-    <body>
+    <body class="h-full">
         {{ $slot }}
     </body>
 </html>

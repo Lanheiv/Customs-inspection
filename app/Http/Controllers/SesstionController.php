@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
 
+use App\Models\User;
+
 class SesstionController extends Controller
 {
     public function index() {
@@ -18,10 +20,12 @@ class SesstionController extends Controller
         ]);
 
         if (Auth::attempt($validate)) {
-            $request->session()->regenerate();
+            $data->session()->regenerate();
 
             return redirect("/");
         }
+
+        return redirect("/login");
     }
     public function destroy() {
         Auth::logout();
