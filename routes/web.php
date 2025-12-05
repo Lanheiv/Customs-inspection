@@ -12,35 +12,3 @@ Route::controller(SesstionController::class)->group(function() {
     Route::get("/login", "index")->middleware("guest")->name("login");
     Route::get("/logout", "destroy")->middleware("auth")->name("destroy");
 })->name("sesstion.");
-
-
-
-
-
-
-
-
-
-
-
-/*
-
-use App\Http\Controllers\OrderController;
-
- 
-
-Route::controller(OrderController::class)->group(function () {
-
-    Route::get('/orders/{id}', 'show');
-
-    Route::post('/orders', 'store');
-
-});
-
-Route::name('admin.')->group(function () {
-    Route::get('/users', function () {
-        // Route assigned name "admin.users"...
-    })->name('users');
-});
-
-*/
