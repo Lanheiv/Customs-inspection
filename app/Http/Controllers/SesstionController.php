@@ -23,9 +23,9 @@ class SesstionController extends Controller
             $data->session()->regenerate();
 
             return redirect("/");
+        } else {
+            return redirect()->back()->withErrors(['error' => 'error']);
         }
-
-        return redirect("/login");
     }
     public function destroy() {
         Auth::logout();
