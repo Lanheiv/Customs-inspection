@@ -13,4 +13,4 @@ Route::controller(SesstionController::class)->group(function() {
     Route::get("/logout", "destroy")->middleware("auth")->name("destroy");
 })->name("sesstion.");
 
-Route::get('/test', function() { return view("test"); })->middleware('rolechecker:analyst');
+Route::get('/test', function() { return view("test"); })->middleware('rolechecker:admin');

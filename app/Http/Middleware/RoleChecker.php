@@ -8,7 +8,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class RoleChecker {
     public function handle($request, Closure $next, string $role) {
-        if ($request->user() && $request->user()->hasRole($role)) {
+        if ($request->user() && $request->user()->role == $role) {
             return $next($request);
         }
 
