@@ -16,7 +16,7 @@ class UsesrSeeder extends Seeder
 
         foreach ($data["users"] as $d) {
             DB::table('users')->insert([
-                'id' => $d["id"],
+                'foreignId' => $d["id"],
                 'username' => $d["username"],
                 'full_name' => $d["full_name"],
                 'password'  => isset($d['password']) ? Hash::make($d['password']) : Hash::make('1234'),

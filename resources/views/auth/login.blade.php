@@ -1,6 +1,6 @@
 <x-layout>
     <x-slot:title>
-        Login
+        Logins
     </x-slot:title>
     
     <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
@@ -49,24 +49,3 @@
         </div>
     </div>
 </x-layout>
-
-<script>
-    const togglePassword = document.querySelector('#togglePassword');
-    const password = document.querySelector("#password");
-
-    togglePassword.addEventListener('click', function (e) {
-        if(password.getAttribute("type") === "password") {
-            password.setAttribute("type", "text");
-
-            document.getElementById("element_1").classList.add("hidden");
-            document.getElementById("element_2").classList.remove("hidden");
-            document.getElementById("element_3").classList.remove("hidden");
-        } else {
-            password.setAttribute("type", "password");
-
-            document.getElementById("element_1").classList.remove("hidden");
-            document.getElementById("element_2").classList.add("hidden");
-            document.getElementById("element_3").classList.add("hidden");
-        }
-    });
-</script>
