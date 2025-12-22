@@ -1,3 +1,5 @@
+@vite('resources/js/scripts/login_script.js')
+
 <x-layout>
     <x-slot:title>
         Logins
