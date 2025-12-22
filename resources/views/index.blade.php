@@ -3,6 +3,4 @@
         Sākumlapa
     </x-slot:title>
     
-    <a href="/logout">iziet no konta</a>
-    
 </x-layout>
