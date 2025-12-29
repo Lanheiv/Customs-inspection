@@ -11,8 +11,21 @@
         </div>
 
         <div id="mode-swich-div" class="" onclick="modeSwich()">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-auto h-6" viewBox="0 0 24 24">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-auto h-6 hidden dark:block" viewBox="0 0 24 24">
                 <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21.182 14.86A9.474 9.474 0 1 1 9.139 2.819a1.053 1.053 0 0 1 1.38 1.295a7.705 7.705 0 0 0-.085 4.642a6.999 6.999 0 0 0 4.81 4.811c1.52.45 3.14.42 4.643-.084a1.053 1.053 0 0 1 1.295 1.379"/>
+            </svg>
+
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-auto h-6 block dark:hidden" viewBox="0 0 24 24">
+                <g fill="none">
+                    <g stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" clip-path="url(#mageSun0)">
+                        <path d="M12 17.885a5.885 5.885 0 1 0 0-11.77a5.885 5.885 0 0 0 0 11.77m-9.281-5.879H1.5m21 0h-1.207m-9.287-9.287V1.5m0 21v-1.207M5.435 5.435l-.859-.859m14.848 14.848l-.86-.86m.001-13.129l.858-.859M4.576 19.424l.86-.86"/>
+                    </g>
+                    <defs>
+                        <clipPath id="mageSun0">
+                            <path fill="#fff" d="M0 0h24v24H0z"/>
+                        </clipPath>
+                    </defs>
+                </g>
             </svg>
         </div>
     </nav>

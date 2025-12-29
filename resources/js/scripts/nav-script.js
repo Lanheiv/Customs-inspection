@@ -1,4 +1,8 @@
-window.sidebarSwich = function sidebarSwich() {
+if (localStorage.theme === 'dark' || (!localStorage.theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    document.documentElement.classList.add('dark');
+}
+
+window.sidebarSwich = function() {
     let sidebar = localStorage.getItem("sidebar-swich");
     const element = document.getElementById("sidebar-swich-div");
 
@@ -10,15 +14,15 @@ window.sidebarSwich = function sidebarSwich() {
 
     }
 }
-window.sidebarSwich = function modeSwich() {
-    let mode = localStorage.getItem("mode-swich");
+window.modeSwich = function() {
+    let mode = localStorage.getItem("theme");
     const element = document.getElementById("mode-swich-div");
-
+    
     if (mode === "light" || mode === null) { // -- light vai dark
-        localStorage.setItem("mode-swich", "dark");
-
+        localStorage.setItem("theme", "dark");
+        document.documentElement.classList.add("dark");
     } else {
-        localStorage.setItem("mode-swich", "light");
-        
+        localStorage.setItem("theme", "light");
+        document.documentElement.classList.remove("dark");
     }
 }
