@@ -1,11 +1,11 @@
-<aside id="aside-collapsed" class="flex flex-col items-center w-16 h-screen py-8 overflow-y-auto bg-white border-r-2 border-stone-200">
+<aside id="aside-collapsed" class="flex flex-col items-center w-16 h-screen pb-8 pt-14 overflow-y-auto bg-white border-r-2 border-stone-200">
     <nav class="flex flex-col flex-1 space-y-4">
-        <a href="/" class="p-1.5 text-gray-700 focus:outline-nones transition-colors duration-200 rounded-lg dark:text-gray-200 dark:hover:bg-gray-800 hover:bg-gray-100">
+        <a href="/" class="p-1.5 text-gray-700 transition-colors duration-200 rounded-lg hover:bg-gray-100">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-auto h-6" viewBox="0 0 24 24">
                 <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m19.633 7.11l-6.474-4.02a2.228 2.228 0 0 0-2.362 0L4.324 7.133A2.228 2.228 0 0 0 3.31 9.362l1.67 10.027a2.228 2.228 0 0 0 2.228 1.86h9.582a2.229 2.229 0 0 0 2.229-1.86l1.67-10.027a2.228 2.228 0 0 0-1.058-2.251M8.636 16.459h6.685"/>
             </svg>
         </a>
-        <a href="#" class="p-1.5 text-gray-700 focus:outline-nones transition-colors duration-200 rounded-lg dark:text-gray-200 dark:hover:bg-gray-800 hover:bg-gray-100">
+        <a href="#" class="p-1.5 text-gray-700 transition-colors duration-200 rounded-lg hover:bg-gray-100">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-auto h-6" viewBox="0 0 24 24">
                 <g fill="none" stroke="currentColor">
                     <rect width="18.5" height="18.5" x="2.75" y="2.75" stroke-width="1.5" rx="6"/>
@@ -13,12 +13,12 @@
                 </g>
             </svg>
         </a>
-        <a href="#" class="p-1.5 text-gray-700 focus:outline-nones transition-colors duration-200 rounded-lg dark:text-gray-200 dark:hover:bg-gray-800 hover:bg-gray-100">
+        <a href="#" class="p-1.5 text-gray-700 transition-colors duration-200 rounded-lg hover:bg-gray-100">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-auto h-6" viewBox="0 0 24 24">
                 <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.382 8.813v8.5c0 .845.344 1.656.957 2.253a3.305 3.305 0 0 0 2.308.934h8.706c.866 0 1.696-.336 2.308-.934a3.15 3.15 0 0 0 .957-2.253v-8.5m0-5.313H4.382c-.901 0-1.632.714-1.632 1.594v2.125c0 .88.73 1.593 1.632 1.593h15.236c.901 0 1.632-.713 1.632-1.593V5.094c0-.88-.73-1.594-1.632-1.594M8.735 15.188h6.53"/>
             </svg>
         </a>
-        <a href="#" class="p-1.5 text-gray-700 focus:outline-nones transition-colors duration-200 rounded-lg dark:text-gray-200 dark:hover:bg-gray-800 hover:bg-gray-100">
+        <a href="#" class="p-1.5 text-gray-700 transition-colors duration-200 rounded-lg hover:bg-gray-100">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-auto h-6" viewBox="0 0 24 24">
                 <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
                     <path d="M19.194 9.079V7.821c0-.538-.216-1.054-.602-1.434a2.07 2.07 0 0 0-1.453-.594H6.86a2.07 2.07 0 0 0-1.453.594c-.386.38-.602.896-.602 1.434V9.08"/>
@@ -28,7 +28,7 @@
             </svg>
         </a>
         @if(auth()->user()->role == "admin")
-            <a href="#" class="p-1.5 text-gray-700 focus:outline-nones transition-colors duration-200 rounded-lg dark:text-gray-200 dark:hover:bg-gray-800 hover:bg-gray-100">
+            <a href="#" class="p-1.5 text-gray-700 transition-colors duration-200 rounded-lg hover:bg-gray-100">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-auto h-6" viewBox="0 0 24 24">
                     <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
                         <path d="M12.132 15.404a3.364 3.364 0 1 0 0-6.728a3.364 3.364 0 0 0 0 6.728"/>
@@ -39,9 +39,18 @@
         @endif
     </nav>
     <div class="flex flex-col space-y-6">
-        <a href="/account" class="p-1.5 text-gray-700 focus:outline-nones transition-colors duration-200 rounded-lg dark:text-gray-200 dark:hover:bg-gray-800 hover:bg-gray-100">
+        <a href="/account" class="p-1.5 text-gray-700 transition-colors duration-200 rounded-lg hover:bg-gray-100">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-auto h-6" viewBox="0 0 24 24">
                 <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.618 21.25c0-3.602-4.016-6.53-7.618-6.53c-3.602 0-7.618 2.928-7.618 6.53M12 11.456a4.353 4.353 0 1 0 0-8.706a4.353 4.353 0 0 0 0 8.706"/>
+            </svg>
+        </a>
+        <a href="/logout" class="p-1.5 text-gray-700 transition-colors duration-200 rounded-lg hover:bg-gray-100">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-auto h-6" viewBox="0 0 24 24">
+                <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5">
+                    <path stroke-linejoin="round" d="M13.477 21.245H8.34a4.918 4.918 0 0 1-5.136-4.623V7.378A4.918 4.918 0 0 1 8.34 2.755h5.136"/>
+                    <path stroke-miterlimit="10" d="M20.795 12H7.442"/>
+                    <path stroke-linejoin="round" d="m16.083 17.136l4.404-4.404a1.04 1.04 0 0 0 0-1.464l-4.404-4.404"/>
+                </g>
             </svg>
         </a>
     </div>
