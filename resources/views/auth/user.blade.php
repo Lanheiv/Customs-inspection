@@ -28,5 +28,3 @@
         </div>
     </div>
 </x-layout>
-
-<!-- JS kods kas checkos vai ir kautkas mainīts -->
