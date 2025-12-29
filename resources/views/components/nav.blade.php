@@ -1,6 +1,6 @@
 @auth 
     <nav class="flex h-10 bg-white border-b-2 border-stone-200 items-center shrink-0 justify-between px-2">
-        <div class="" onclick="sidebarSwich()">
+        <div id="sidebar-swich-div" class="" onclick="sidebarSwich()">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-auto h-6" viewBox="0 0 24 24">
                 <g fill="none" stroke="currentColor" stroke-width="1.5">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M2.75 9.167h18.5"/>
@@ -10,7 +10,7 @@
             </svg>
         </div>
 
-        <div class="" onclick="modeSwich()">
+        <div id="mode-swich-div" class="" onclick="modeSwich()">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-auto h-6" viewBox="0 0 24 24">
                 <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21.182 14.86A9.474 9.474 0 1 1 9.139 2.819a1.053 1.053 0 0 1 1.38 1.295a7.705 7.705 0 0 0-.085 4.642a6.999 6.999 0 0 0 4.81 4.811c1.52.45 3.14.42 4.643-.084a1.053 1.053 0 0 1 1.295 1.379"/>
             </svg>
