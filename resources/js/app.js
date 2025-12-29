@@ -1,3 +1,3 @@
 import './bootstrap';
 
-import './scripts/system_script.js';
+import './scripts/nav-script.js';
