@@ -23,8 +23,8 @@
 
     <div class="fixed bottom-0 left-0 w-full bg-white p-4 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1),0_-2px_4px_-1px_rgba(0,0,0,0.06)]">
         <div class="max-w-2xl mx-auto flex justify-center gap-4">
-            <button type="button" class="flex-.5 text-center px-4 py-2 rounded-lg bg-gray-200 text-gray-700 font-medium hover:bg-gray-300 transition">Reset</button>
-            <button type="submit" form="settings" class="flex-.5 text-center px-4 py-2 rounded-lg bg-gray-100 text-gray-900 font-medium hover:bg-gray-200 transition">Save</button>
+            <button type="button" class="flex-.5 text-center px-4 py-2 rounded-lg bg-gray-200 text-gray-700 font-medium hover:bg-gray-300 transition">Atjaunot</button>
+            <button type="submit" form="settings" class="flex-.5 text-center px-4 py-2 rounded-lg bg-gray-200 text-gray-700 font-medium hover:bg-gray-300 transition">Saglabāt</button>
         </div>
     </div>
 </x-layout>
