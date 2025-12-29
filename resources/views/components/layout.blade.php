@@ -6,7 +6,7 @@
         <title>{{ $title ?? "Customs inspection" }}</title>
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="h-full bg-stone-100">
+    <body class="min-h-screen bg-stone-100">
         <div class="flex min-h-screen">
             <x-sidebar />
 
