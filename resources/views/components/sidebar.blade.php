@@ -1,3 +1,4 @@
-@auth 
+@auth
     @include('components.sidebar-elements.nav-collapsed')
-@endauth  
+    @include('components.sidebar-elements.nav-full')
+@endauth 
