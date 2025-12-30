@@ -1,4 +1,4 @@
-<?php
+<?php // Random root koda fragmenti kas ir atrasti internetā vēlākai izmanotšanai vai testēšanai
 
 Route::get('/test', function() { return view("test"); })->middleware('rolechecker:admin');
 

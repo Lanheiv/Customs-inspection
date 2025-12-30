@@ -1,4 +1,4 @@
-@vite('resources/js/scripts/user_changes_script.js')
+@vite('resources/js/scripts/user-account-changes-script.js')
 
 <x-layout>
     <x-slot:title>

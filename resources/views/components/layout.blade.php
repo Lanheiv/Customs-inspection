@@ -6,7 +6,17 @@
         <title>{{ $title ?? "Customs inspection" }}</title>
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="h-full">
-        {{ $slot }}
+    <body class="min-h-screen bg-stone-100">
+        <div class="flex min-h-screen">
+            <x-sidebar />
+
+            <div class="flex-1 flex flex-col">
+                <x-nav />
+
+                <main class="flex-1">
+                    {{ $slot }}
+                </main>
+            </div>
+        </div>
     </body>
 </html>

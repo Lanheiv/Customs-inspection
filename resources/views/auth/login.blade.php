@@ -1,4 +1,4 @@
-@vite('resources/js/scripts/login_script.js')
+@vite('resources/js/scripts/login-script.js')
 
 <x-layout>
     <x-slot:title>

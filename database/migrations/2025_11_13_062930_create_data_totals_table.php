@@ -9,12 +9,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('data_totals', function (Blueprint $table) {
-            $table->string("vehicles");
-            $table->string("parties");
-            $table->string("users");
-            $table->string("cases");
-            $table->string("inspections");
-            $table->string("documents");
+            $table->id();
+            $table->integer("vehicles");
+            $table->integer("parties");
+            $table->integer("users");
+            $table->integer("cases");
+            $table->integer("inspections");
+            $table->integer("documents");
         });
     }
 
