@@ -9,7 +9,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('parties', function (Blueprint $table) {
-            $table->string("id");
+            $table->id();
+            $table->string("foreignId")->unique();
             $table->string("type");
             $table->string("name");
             $table->string("reg_code");

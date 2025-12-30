@@ -15,7 +15,7 @@ class PartieSeeder extends Seeder
 
         foreach ($data["parties"] as $d) {
             DB::table('parties')->insert([
-                'id' => $d["id"],
+                'foreignId' => $d["id"],
                 'type' => $d["type"],
                 'name' => $d["name"],
                 'reg_code' => $d["reg_code"],

@@ -15,7 +15,7 @@ class DocumentSeeder extends Seeder
 
         foreach ($data["documents"] as $d) {
             DB::table('documents')->insert([
-                'id' => $d["id"],
+                'foreignId' => $d["id"],
                 'case_id' => $d["case_id"],
                 'filename' => $d["filename"],
                 'mime_type' => $d["mime_type"],

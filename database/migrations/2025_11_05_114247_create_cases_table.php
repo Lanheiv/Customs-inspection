@@ -9,7 +9,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('cases', function (Blueprint $table) {
-            $table->string("id");
+            $table->id();
+            $table->string("foreignId")->unique();
             $table->string("external_ref");
             $table->string("status");
             $table->string("priority");

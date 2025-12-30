@@ -15,7 +15,7 @@ class InspectionSeeder extends Seeder
 
         foreach ($data["inspections"] as $d) {
             DB::table('inspections')->insert([
-                'id' => $d["id"],
+                'foreignId' => $d["id"],
                 'case_id' => $d["case_id"],
                 'type' => $d["type"],
                 'requested_by' => $d["requested_by"],

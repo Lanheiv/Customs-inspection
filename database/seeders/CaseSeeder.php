@@ -15,7 +15,7 @@ class CaseSeeder extends Seeder
 
         foreach ($data["cases"] as $d) {
             DB::table('cases')->insert([
-                'id' => $d["id"],
+                'foreignId' => $d["id"],
                 'external_ref' => $d["external_ref"],
                 'status' => $d["status"],
                 'priority' => $d["priority"],

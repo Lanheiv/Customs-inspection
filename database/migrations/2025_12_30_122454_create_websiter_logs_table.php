@@ -8,19 +8,19 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('vehicles', function (Blueprint $table) {
+        Schema::create('websiter-logs', function (Blueprint $table) {
             $table->id();
             $table->string("foreignId")->unique();
-            $table->string("plate_no");
-            $table->string("country");
-            $table->string("make");
-            $table->string("model");
-            $table->string("vin");
+            $table->string("user_id");
+            $table->string("tabel");
+            $table->string("tabel_id");
+            $table->string("description");
+            $table->timestamps();
         });
     }
+
     public function down(): void
     {
-        Schema::dropIfExists('vehicles');
+        Schema::dropIfExists('websiter-logs');
     }
 };
-

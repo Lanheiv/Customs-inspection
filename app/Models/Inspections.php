@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Inspections extends Model
 {
     protected $fillable = [
-        'id',
+        'foreignId',
         'case_id',
         'type',
         'requested_by',
@@ -19,4 +19,16 @@ class Inspections extends Model
     protected $casts = [
         'checks' => 'array',
     ];
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($partie) {
+            if (empty($partie->foreignId)) {
+                $id = static::max('id') + 1;
+                $partie->foreignId = 'insp-' . str_pad($id, 6, '0', STR_PAD_LEFT);;
+            }
+        });
+    }
 }

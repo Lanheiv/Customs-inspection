@@ -9,7 +9,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('inspections', function (Blueprint $table) {
-            $table->string("id");
+            $table->id();
+            $table->string("foreignId")->unique();
             $table->string("case_id");
             $table->string("type");
             $table->string("requested_by");

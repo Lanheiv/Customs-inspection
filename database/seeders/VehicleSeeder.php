@@ -15,7 +15,7 @@ class VehicleSeeder extends Seeder
 
         foreach ($data["vehicles"] as $d) {
             DB::table('vehicles')->insert([
-                'id' => $d["id"],
+                'foreignId' => $d["id"],
                 'plate_no' => $d["plate_no"],
                 'country' => $d["country"],
                 'make' => $d["make"],
