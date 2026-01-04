@@ -1,10 +1,10 @@
-<?php // Random root koda fragmenti kas ir atrasti internetā vēlākai izmanotšanai vai testēšanai
+<?php
 
 Route::get('/test', function() { return view("test"); })->middleware('rolechecker:admin');
 
 Route::group(['prefix' => '/'], function()
 {
-    if ( Auth::check() ) // use Auth::check instead of Auth::user
+    if ( Auth::check() )
     {
         Route::get('/', 'PagesController@logged_in_index');
     } else{

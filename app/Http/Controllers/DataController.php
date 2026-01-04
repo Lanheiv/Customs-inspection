@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Cases;
+
 class DataController extends Controller
 {
     public function index(string $id) {
-        $parts = explode("-", $id, 2); // sagriež 2 daļās 
+        $parts = explode("-", $id, 2);
         $type = $parts[0];
         $num  = $parts[1] ?? null;
 
@@ -26,5 +28,12 @@ class DataController extends Controller
         } else {
             return redirect("/");
         }
+    }
+    public function casesIndex($id) {
+        $data = Cases::where('foreignId', $id)->first();
+        if($data !== null) {
+            return view("data.cases.index", compact("data"));
+        }
+        return redirect("/");
     }
 }
