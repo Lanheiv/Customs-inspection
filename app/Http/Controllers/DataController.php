@@ -28,6 +28,9 @@ class DataController extends Controller
         } elseif ($type === "pty") {
             return $this->partiesIndex($id);
         } elseif ($type === "usr") {
+            if (auth()->user()->role !== "admin") {
+                return redirect('/');
+            }
             return $this->usersIndex($id);
         } elseif ($type === "doc") {
             return $this->documentsIndex($id);
@@ -54,36 +57,38 @@ class DataController extends Controller
         if($data !== null) {
             $path = \Storage::url('cases/' . $data->filename);
             $case = Cases::where('foreignId', $data->case_id)->get();
+            $user = Users::where('username', $data->uploaded_by)->first();
 
-            return view('data.documents.index', compact("data", "case", "path"));
+            return view('data.documents.index', compact("data", "case", "path", "user"));
         }
         return redirect("/");
     }
     public function inspectionsIndex($id) {
         $data = Inspections::where('foreignId', $id)->first();
         if($data !== null) {
-            
+            $case = Cases::where('foreignId', $data->case_id)->first();
+            return view('data.inspections.index', compact("data", "case"));
         }
         return redirect("/");
     }
     public function partiesIndex($id) {
         $data = Parties::where('foreignId', $id)->first();
         if($data !== null) {
-            
+            return view('data.parties.index', compact("data"));
         }
         return redirect("/");
     }
     public function usersIndex($id) {
         $data = Users::where('foreignId', $id)->first();
         if($data !== null) {
-            
+            return view('data.users.index', compact("data"));
         }
         return redirect("/");
     }
     public function vehiclesIndex($id) {
         $data = Vehicles::where('foreignId', $id)->first();
         if($data !== null) {
-            
+            return view('data.vehicles.index', compact("data"));
         }
         return redirect("/");
     }

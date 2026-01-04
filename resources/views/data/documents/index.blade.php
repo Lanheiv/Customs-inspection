@@ -29,8 +29,8 @@
                     <div>{{ $data->pages ?? "—" }}</div>
                 </div>
                 <div>
-                    <div class="text-gray-500">Pievienojis:</div>
-                    <div>{{ $data->uploaded_by ?? "—" }}</div>
+                    <div class="text-gray-500">Pievienoja:</div>
+                    <div>{{ $user->full_name ?? "—" }}</div>
                 </div>
                 <div class="col-span-2">
                     <div class="text-gray-500">Fails:</div>

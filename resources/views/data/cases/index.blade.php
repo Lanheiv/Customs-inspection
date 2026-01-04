@@ -58,6 +58,9 @@
                         <div class="text-xs text-gray-500">VIN:</div>
                         <div class="text-stone-700">{{ $vehicle->vin }}</div>
                     </div>
+                    <div class="mb-4">
+                        <a class="text-blue-600 underline" href="{{ $vehicle?->foreignId }}">detaļas</a>
+                    </div>
                 </div>
             @else
                 <div class="text-sm text-gray-400">
@@ -74,7 +77,7 @@
             <div class="mb-4">
                 <div class="text-xs text-gray-500">Deklarants:</div>
                 <div class="text-stone-700">
-                    {{ $partie_declarant?->name ?? '-' }}
+                    <a class="text-blue-600 underline" href="{{ $partie_declarant?->foreignId }}">{{ $partie_declarant?->name ?? '-' }}</a>
                 </div>
                 <div class="text-sm text-gray-600">
                     {{ $partie_declarant?->country ?? '' }}
@@ -84,7 +87,7 @@
             <div>
                 <div class="text-xs text-gray-500">Saņēmējs:</div>
                 <div class="text-stone-700">
-                    {{ $partie_consignee?->name ?? '-' }}
+                    <a class="text-blue-600 underline" href="{{ $partie_consignee?->foreignId }}">{{ $partie_consignee?->name ?? '-' }}</a>
                 </div>
                 <div class="text-sm text-gray-600">
                     {{ $partie_consignee?->country ?? '' }}
