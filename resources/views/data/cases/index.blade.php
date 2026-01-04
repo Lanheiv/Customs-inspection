@@ -116,21 +116,25 @@
 
         <div class="bg-white border border-stone-200 rounded-xl px-6 py-6">
             <div class="border-b border-stone-100 font-semibold text-stone-700 mb-4">
-                Inspekcijas
+                Inspekcija
             </div>
 
             @if($inspection->count())
                 @foreach($inspection as $insp)
                     <div class="border-b border-stone-100 py-2 text-sm">
-                        <div>Tips: {{ $insp->type }}</div>
-                        <div class="text-gray-500">
-                            {{ $insp->start_ts }}
+                        <div class="flex justify-between">
+                            <div>{{ $insp->foreignId }}</div>
+                            <div><a class="text-blue-600 underline" href="{{ $insp->foreignId }}">detaļas</a></div>
+                        </div>
+                        <div class="text-gray-500 flex justify-between">
+                            <div>{{ $insp->start_ts }}</div>
+                            <div>{{ $insp->type }}</div>
                         </div>
                     </div>
                 @endforeach
             @else
                 <div class="text-sm text-gray-400">
-                    Nav inspekciju
+                    Nav inspekcijas
                 </div>
             @endif
         </div>

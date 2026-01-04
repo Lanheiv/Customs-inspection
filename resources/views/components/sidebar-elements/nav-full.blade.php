@@ -1,4 +1,5 @@
-<aside id="aside-full" class="flex flex-col w-64 h-screen px-5 py-8 overflow-y-auto bg-white border-r-2 border-stone-200 hidden">
+<aside id="aside-full" class="fixed left-0 top-0 z-40 flex flex-col w-64 h-screen px-5 py-8 overflow-y-auto bg-white border-r-2 border-stone-200 hidden">
+
     <div class="flex flex-col justify-between flex-1 mt-6">
         <nav class="flex-1 -mx-3 space-y-3">
             <a href="/" class="flex items-center px-3 py-2 text-gray-700 transition-colors duration-200 transform rounded-lg hover:bg-gray-100">

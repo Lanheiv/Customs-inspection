@@ -67,7 +67,9 @@ class DataController extends Controller
         $data = Inspections::where('foreignId', $id)->first();
         if($data !== null) {
             $case = Cases::where('foreignId', $data->case_id)->first();
-            return view('data.inspections.index', compact("data", "case"));
+            $user = Users::where('username', $data->assigned_to)->first();
+
+            return view('data.inspections.index', compact("data", "case", "user"));
         }
         return redirect("/");
     }

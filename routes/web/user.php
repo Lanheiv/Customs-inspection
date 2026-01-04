@@ -13,4 +13,7 @@ Route::controller(SesstionController::class)->group(function() {
 Route::controller(UserController::class)->group(function() {
     Route::get("/account", "index")->middleware("auth");
     Route::post("/account", "update")->middleware("auth");
+
+    Route::get("/admin/user/{id}", "adminEdit")->middleware("auth");
+    Route::post("/admin/user/{id}", "adminUpdate")->middleware("auth");
 });

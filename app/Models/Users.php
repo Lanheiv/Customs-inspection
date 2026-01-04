@@ -9,6 +9,8 @@ use Illuminate\Notifications\Notifiable;
 
 class Users extends Authenticatable
 {
+    public $timestamps = false;
+
     protected $fillable = [
         'foreignId',
         'username',

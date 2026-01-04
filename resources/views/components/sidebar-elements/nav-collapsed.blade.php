@@ -1,4 +1,5 @@
-<aside id="aside-collapsed" class="flex flex-col items-center w-16 h-screen pb-8 pt-14 overflow-y-auto bg-white border-r-2 border-stone-200">
+<aside id="aside-collapsed" class="fixed left-0 top-0 z-40 flex flex-col items-center w-16 h-screen pb-8 pt-14 overflow-y-auto bg-white border-r-2 border-stone-200">
+
     <nav class="flex flex-col flex-1 space-y-4">
         <a href="/" class="p-1.5 text-gray-700 transition-colors duration-200 rounded-lg hover:bg-gray-100">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-auto h-6" viewBox="0 0 24 24">

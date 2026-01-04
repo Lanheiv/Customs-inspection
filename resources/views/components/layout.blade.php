@@ -10,7 +10,7 @@
         <div class="flex min-h-screen">
             <x-sidebar />
 
-            <div class="flex-1 flex flex-col">
+            <div id="big-nav" class="flex-1 flex flex-col ml-16">
                 <x-nav />
 
                 <main class="flex-1">
