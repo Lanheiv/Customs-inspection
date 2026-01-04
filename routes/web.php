@@ -2,6 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-require __DIR__ . "/web/index.php";
-require __DIR__ . "/web/auth.php";
-require __DIR__ . "/web/account.php";
+require __DIR__ . "/web/user.php";
+require __DIR__ . "/web/data.php";
+require __DIR__ . "/web/dashboard.php";

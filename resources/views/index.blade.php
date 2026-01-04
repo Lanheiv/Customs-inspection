@@ -9,7 +9,6 @@
 
             <div class="flex flex-col lg:flex-row items-center justify-between text-stone-700">
                 <div class="text-xl font-semibold">Esiet sveicināts {{ auth()->user()->username }}</div>
-                <div class="px-6 py-3 text-xl font-semibold">Jūsu loma: {{ auth()->user()->role }}</div>
             </div>
         </div>
         <div class="col-span-2 rounded-xl border border-stone-200 bg-white px-6 py-8 grid grid-cols-1 lg:grid-cols-5 gap-6">

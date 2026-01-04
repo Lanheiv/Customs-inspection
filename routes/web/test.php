@@ -11,3 +11,7 @@ Route::group(['prefix' => '/'], function()
         Route::get('/', 'PagesController@guest_index');
     }
 });
+
+Route::get('/user/{name}', function (string $name) {
+    // ...
+})->where('name', '[A-Za-z]+');
