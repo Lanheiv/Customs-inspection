@@ -13,12 +13,4 @@ Route::controller(SesstionController::class)->group(function() {
 Route::controller(UserController::class)->middleware('auth')->group(function() {
     Route::get("/account", "index");
     Route::post("/account", "update");
-
-    Route::middleware('rolechecker:admin')->group(function() {
-        Route::get("/admin/user/create", "adminCreate");
-        Route::post("/admin/user/create", "adminStore");
-
-        Route::get("/admin/user/{id}", "adminEdit");
-        Route::post("/admin/user/{id}", "adminUpdate");
-    });
 });

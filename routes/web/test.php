@@ -1,4 +1,4 @@
-<?php
+<?php // random stuff to test :?
 
 Route::get('/test', function() { return view("test"); })->middleware('rolechecker:admin');
 

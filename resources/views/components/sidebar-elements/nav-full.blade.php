@@ -34,7 +34,7 @@
                 <span class="mx-2 text-sm font-medium">Dokumenti</span>
             </a>
             @if(auth()->user()->role == "admin")
-                <a href="/" class="flex items-center px-3 py-2 text-gray-700 transition-colors duration-200 transform rounded-lg hover:bg-gray-100">
+                <a href="/admin" class="flex items-center px-3 py-2 text-gray-700 transition-colors duration-200 transform rounded-lg hover:bg-gray-100">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-auto h-6" viewBox="0 0 24 24">
                         <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
                             <path d="M12.132 15.404a3.364 3.364 0 1 0 0-6.728a3.364 3.364 0 0 0 0 6.728"/>

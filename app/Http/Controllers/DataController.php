@@ -83,7 +83,7 @@ class DataController extends Controller
     public function usersIndex($id) {
         $data = Users::where('foreignId', $id)->first();
         if($data !== null) {
-            return view('data.users.index', compact("data"));
+            return view('data.users.user-view', compact("data"));
         }
         return redirect("/");
     }
