@@ -1,6 +1,6 @@
-const rows = document.querySelector('table').querySelectorAll('tr');
+const rows = document.querySelector("table").querySelectorAll("tr");
 
-document.getElementById("user_serch").addEventListener('input', function() {
+document.getElementById("user_serch").addEventListener("input", function() {
     const value = this.value.toLowerCase();
 
     for (let i = 0; i < rows.length; i++) {
@@ -15,6 +15,6 @@ document.getElementById("user_serch").addEventListener('input', function() {
             }
         }
 
-        row.style.display = match ? '' : 'none';
+        row.style.display = match ? "" : "none";
     }
 });

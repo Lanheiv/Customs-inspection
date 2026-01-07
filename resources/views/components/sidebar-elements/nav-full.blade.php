@@ -15,13 +15,13 @@
                         <path stroke-linecap="round" stroke-width="1.6" d="M7.672 16.222v-5.099m4.451 5.099V7.778m4.205 8.444V9.82"/>
                     </g>
                 </svg>
-                <span class="mx-2 text-sm font-medium">Reģistrs</span>
+                <span class="mx-2 text-sm font-medium">Gadījumi</span>
             </a>
             <a href="/inspections" class="flex items-center px-3 py-2 text-gray-700 transition-colors duration-200 transform rounded-lg hover:bg-gray-100">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-auto h-6" viewBox="0 0 24 24">
                     <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.382 8.813v8.5c0 .845.344 1.656.957 2.253a3.305 3.305 0 0 0 2.308.934h8.706c.866 0 1.696-.336 2.308-.934a3.15 3.15 0 0 0 .957-2.253v-8.5m0-5.313H4.382c-.901 0-1.632.714-1.632 1.594v2.125c0 .88.73 1.593 1.632 1.593h15.236c.901 0 1.632-.713 1.632-1.593V5.094c0-.88-.73-1.594-1.632-1.594M8.735 15.188h6.53"/>
                 </svg>
-                <span class="mx-2 text-sm font-medium">Pārbaudes</span>
+                <span class="mx-2 text-sm font-medium">Inspekcijas</span>
             </a>
             <a href="/documents" class="flex items-center px-3 py-2 text-gray-700 transition-colors duration-200 transform rounded-lg hover:bg-gray-100">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-auto h-6" viewBox="0 0 24 24">
