@@ -18,10 +18,18 @@ class DashboardController extends Controller
         return view("index", compact("data"));
     }
     public function casesIndex() {
-        return view("cases-dashboard");
+        $case = Cases::all();
+        return view("cases-dashboard", compact("case"));
     }
     public function inspectionsIndex() {
-        return view("inspections-dashboard");
+        $insp = Inspections::all();
+        if(auth()->user()->role == "inspector") {
+            $foryou = Inspections::where("assigned_to", "=", auth()->user()->username)->get();
+
+            return view("inspections-dashboard", compact("foryou", "insp"));
+        } else {
+            return view("inspections-dashboard", compact("insp"));
+        }
     }
     public function documentsIndex() {
         $doc = Documents::all();

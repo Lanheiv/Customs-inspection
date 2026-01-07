@@ -1,3 +1,5 @@
+@vite('resources/js/scripts/insp-serch-script.js')
+
 <x-layout>
     <x-slot:title>
         Inspekcijas
@@ -9,5 +11,85 @@
                 Inspekcijas
             </div>
         </div>
+        <div class="xl:col-span-2 xl:row-span-8  bg-white border border-stone-200 rounded-xl px-8 py-6">
+            <div class="flex justify-between items-center mb-4">
+                <div class="text-stone-700 text-xl font-semibold border-b border-stone-100 pb-2"> Inspekcijas </div>
+
+                <div class="relative">
+                    <div class="absolute inset-y-0 left-2 flex items-center pointer-events-none">
+                        <svg class="w-4 h-4 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M17 10a7 7 0 1 0-14 0 7 7 0 0 0 14 0z"/>
+                        </svg>
+                    </div>
+
+                    <input type="text" id="insp_serch" class="pl-8 pr-3 py-1.5 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-1"/>
+                </div>
+            </div>
+            <div class="overflow-y-auto max-h-[400px]">
+                <table id="insp_table" class="min-w-full divide-y divide-stone-200 text-sm text-stone-700">
+                    <div class="min-w-full divide-y divide-stone-200 text-sm text-stone-700">
+                        <tr>
+                            <th class="px-4 py-2 font-medium">ID</th>
+                            <th class="px-4 py-2 font-medium">Gadījums</th>
+                            <th class="px-4 py-2 font-medium">Lokācija</th>
+                            <th class="px-4 py-2 font-medium">Tips</th>
+                            <th class="px-4 py-2 font-medium"></th>
+                        </tr>
+                    </div>
+                    <div>
+                        @foreach($insp as $insp)
+                            <tr class="text-center">
+                                <td>{{ $insp->foreignId }}</td>
+                                <td class="text-blue-600 underline"><a href="/data/{{ $insp->case_id }}">{{ $insp->case_id }}</a></td>
+                                <td>{{ $insp->location }}</td>
+                                <td>{{ $insp->type }}</td>
+                                <td class="text-blue-600 underline"><a href="/data/{{ $insp->foreignId }}">detaļas</a></td>
+                            </tr>
+                        @endforeach
+                    </div>
+                </table>
+            </div>
+        </div>
+        @if(auth()->user()->role == "inspector")
+            <div class="xl:col-span-2 xl:row-span-8  bg-white border border-stone-200 rounded-xl px-8 py-6">
+                <div class="flex justify-between items-center mb-4">
+                    <div class="text-stone-700 text-xl font-semibold border-b border-stone-100 pb-2"> Jums uzdotās inspekcijas </div>
+
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-2 flex items-center pointer-events-none">
+                            <svg class="w-4 h-4 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M17 10a7 7 0 1 0-14 0 7 7 0 0 0 14 0z"/>
+                            </svg>
+                        </div>
+
+                        <input type="text" id="specal_serch" class="pl-8 pr-3 py-1.5 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-1"/>
+                    </div>
+                </div>
+                <div class="overflow-y-auto max-h-[400px]">
+                    <table id="specal_table" class="min-w-full divide-y divide-stone-200 text-sm text-stone-700">
+                        <div class="min-w-full divide-y divide-stone-200 text-sm text-stone-700">
+                            <tr>
+                                <th class="px-4 py-2 font-medium">ID</th>
+                                <th class="px-4 py-2 font-medium">Gadījums</th>
+                                <th class="px-4 py-2 font-medium">Lokācija</th>
+                                <th class="px-4 py-2 font-medium">Tips</th>
+                                <th class="px-4 py-2 font-medium"></th>
+                            </tr>
+                        </div>
+                        <div>
+                            @foreach($foryou as $foryou)
+                                <tr class="text-center">
+                                    <td>{{ $foryou->foreignId }}</td>
+                                    <td class="text-blue-600 underline"><a href="/data/{{ $foryou->case_id }}">{{ $foryou->case_id }}</a></td>
+                                    <td>{{ $foryou->location }}</td>
+                                    <td>{{ $foryou->type }}</td>
+                                    <td class="text-blue-600 underline"><a href="/data/{{ $foryou->foreignId }}">detaļas</a></td>
+                                </tr>
+                            @endforeach
+                        </div>
+                    </table>
+                </div>
+            </div>
+        @endif
     </div>
 </x-layout>
