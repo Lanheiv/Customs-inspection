@@ -11,4 +11,13 @@ class DashboardController extends Controller
         $data = DataTotal::first();
         return view("index", compact("data"));
     }
+    public function casesIndex() {
+        return view("cases-dashboard");
+    }
+    public function inspectionsIndex() {
+        return view("inspections-dashboard");
+    }
+    public function documentsIndex() {
+        return view("documents-dashboard");
+    }
 }

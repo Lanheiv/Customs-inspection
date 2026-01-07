@@ -9,7 +9,4 @@ Route::controller(AdminController::class)->middleware("auth", "rolechecker:admin
 
     Route::get("/admin/user/create", "create");
     Route::post("/admin/user/create", "store");
-
-    Route::get("/admin/user/{id}", "edit");
-    Route::post("/admin/user/{id}", "update");
 });

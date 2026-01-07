@@ -13,27 +13,6 @@ class AdminController extends Controller
     public function index(Request $userdata) {
         return view("admin.index");
     }
-    public function edit($id){
-        $data = Users::where("foreignId", $id)->first();
-        return view("data.users.admin-edit", compact("data"));
-    }
-    public function update(Request $request, $id){
-        $data = Users::where("foreignId", $id)->first();
-        $validated = $request->validate([
-            "username" => ["required", "string"],
-            "full_name" => ["required", "string"],
-            "role" => ["required", "string"],
-            "active" => ["required", "boolean"],
-        ]);
-
-        if ($request->role === "admin") {
-            return back();
-        }
-
-        $data->update($validated);
-
-        return redirect("/data/" . $data->foreignId);
-    }
     public function create() {
         return view("data.users.admin-create");
     }
@@ -48,9 +27,7 @@ class AdminController extends Controller
             "password" => ["required"],
         ]);
 
-        if ($request->role === "admin") {
-            return back();
-        }
+        if ($request->role === "admin") { return back(); }
 
         Users::create([
             "username" => $validated["username"],

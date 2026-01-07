@@ -1,6 +1,6 @@
 <x-layout>
     <x-slot:title>
-        Lietotājs {{ $data->foreignId }}
+        Lietotajs
     </x-slot:title>
 
     <div class="p-6 grid grid-cols-1 xl:grid-cols-2 gap-6">
@@ -10,7 +10,7 @@
                 <div class="text-xl font-semibold text-stone-700">
                     Lietotājs: {{ $data->full_name ?? $data->username }}
                 </div>
-                <div class="text-blue-600 underline"><a href="/admin/user/{{ $data->foreignId }}">rediģēt</a></div>
+                <div class="text-blue-600 underline"><a href="/user/{{ $data->foreignId }}">rediģēt</a></div>
             </div>
 
             <div class="grid grid-cols-2 gap-4 text-sm text-stone-700">

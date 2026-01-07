@@ -28,10 +28,11 @@ class DataController extends Controller
         } elseif ($type === "pty") {
             return $this->partiesIndex($id);
         } elseif ($type === "usr") {
-            if (auth()->user()->role !== "admin") {
-                return redirect('/');
+            if (auth()->user()->foreignId == $id || auth()->user()->role == "admin") {
+                return $this->usersIndex($id);
+            } else {
+                return back();
             }
-            return $this->usersIndex($id);
         } elseif ($type === "doc") {
             return $this->documentsIndex($id);
         } else {

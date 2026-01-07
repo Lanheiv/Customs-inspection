@@ -8,7 +8,7 @@
                 </svg>
                 <span class="mx-2 text-sm font-medium">Sākumlapa</span>
             </a>
-            <a href="#" class="flex items-center px-3 py-2 text-gray-700 transition-colors duration-200 transform rounded-lg hover:bg-gray-100">
+            <a href="/cases" class="flex items-center px-3 py-2 text-gray-700 transition-colors duration-200 transform rounded-lg hover:bg-gray-100">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-auto h-6" viewBox="0 0 24 24">
                     <g fill="none" stroke="currentColor">
                         <rect width="18.5" height="18.5" x="2.75" y="2.75" stroke-width="1.5" rx="6"/>
@@ -17,13 +17,13 @@
                 </svg>
                 <span class="mx-2 text-sm font-medium">Reģistrs</span>
             </a>
-            <a href="/" class="flex items-center px-3 py-2 text-gray-700 transition-colors duration-200 transform rounded-lg hover:bg-gray-100">
+            <a href="/inspections" class="flex items-center px-3 py-2 text-gray-700 transition-colors duration-200 transform rounded-lg hover:bg-gray-100">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-auto h-6" viewBox="0 0 24 24">
                     <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.382 8.813v8.5c0 .845.344 1.656.957 2.253a3.305 3.305 0 0 0 2.308.934h8.706c.866 0 1.696-.336 2.308-.934a3.15 3.15 0 0 0 .957-2.253v-8.5m0-5.313H4.382c-.901 0-1.632.714-1.632 1.594v2.125c0 .88.73 1.593 1.632 1.593h15.236c.901 0 1.632-.713 1.632-1.593V5.094c0-.88-.73-1.594-1.632-1.594M8.735 15.188h6.53"/>
                 </svg>
                 <span class="mx-2 text-sm font-medium">Pārbaudes</span>
             </a>
-            <a href="/" class="flex items-center px-3 py-2 text-gray-700 transition-colors duration-200 transform rounded-lg hover:bg-gray-100">
+            <a href="/documents" class="flex items-center px-3 py-2 text-gray-700 transition-colors duration-200 transform rounded-lg hover:bg-gray-100">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-auto h-6" viewBox="0 0 24 24">
                     <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
                         <path d="M19.194 9.079V7.821c0-.538-.216-1.054-.602-1.434a2.07 2.07 0 0 0-1.453-.594H6.86a2.07 2.07 0 0 0-1.453.594c-.386.38-.602.896-.602 1.434V9.08"/>
@@ -48,7 +48,7 @@
 
         <div class="mt-6">
             <div class="flex items-center justify-between mt-6">
-                <a href="/account" class="flex items-center gap-x-2 text-gray-700">
+                <a href="/data/{{ auth()->user()->foreignId }}" class="flex items-center gap-x-2 text-gray-700">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-auto h-6" viewBox="0 0 24 24">
                         <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.618 21.25c0-3.602-4.016-6.53-7.618-6.53c-3.602 0-7.618 2.928-7.618 6.53M12 11.456a4.353 4.353 0 1 0 0-8.706a4.353 4.353 0 0 0 0 8.706"/>
                     </svg>

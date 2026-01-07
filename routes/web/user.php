@@ -10,7 +10,7 @@ Route::controller(SesstionController::class)->group(function() {
     Route::get("/logout", "destroy")->middleware("auth");
 });
 
-Route::controller(UserController::class)->middleware('auth')->group(function() {
-    Route::get("/account", "index");
-    Route::post("/account", "update");
+Route::middleware("auth")->controller(UserController::class)->group(function() {
+    Route::get("/user/{id}", "edit");
+    Route::post("/user/{id}", "update");
 });
