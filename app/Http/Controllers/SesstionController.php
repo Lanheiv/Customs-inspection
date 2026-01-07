@@ -12,6 +12,7 @@ class SesstionController extends Controller
         return view("auth.login");
     }
     public function store(Request $data) {
+
         $validate = $data->validate([
             "username" => "required|string",
             "password" => "required"
@@ -19,6 +20,11 @@ class SesstionController extends Controller
 
         if (Auth::attempt($validate)) {
             $data->session()->regenerate();
+            $user = auth()->user();
+
+            if (!$user->active) {
+                Auth::logout();
+            }
 
             return redirect("/");
         } else {

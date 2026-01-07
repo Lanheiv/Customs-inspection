@@ -11,7 +11,8 @@ use App\Models\Users;
 class AdminController extends Controller
 {
     public function index(Request $userdata) {
-        return view("admin.index");
+        $users = Users::all();
+        return view("admin.index", compact("users"));
     }
     public function create() {
         return view("data.users.admin-create");

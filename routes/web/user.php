@@ -14,3 +14,4 @@ Route::middleware("auth")->controller(UserController::class)->group(function() {
     Route::get("/user/{id}", "edit");
     Route::post("/user/{id}", "update");
 });
+

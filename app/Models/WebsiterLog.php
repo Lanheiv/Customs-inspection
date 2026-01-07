@@ -9,7 +9,7 @@ class WebsiterLog extends Model
     protected $fillable = [
         'foreignId',
         'user_id',
-        'tabel',
+        'table_name',
         'tabel_id',
         'description'
     ];
