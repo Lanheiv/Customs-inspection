@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string("location");
             $table->json("checks")->nullable();
             $table->string("assigned_to");
+            $table->timestamps("created_ts")->nullable();
         });
     }
     public function down(): void

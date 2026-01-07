@@ -12,10 +12,11 @@ return new class extends Migration
             $table->id();
             $table->string("foreignId")->unique();
             $table->string("user_id");
+            $table->string("IPaddres");
             $table->string("tabel");
             $table->string("tabel_id");
             $table->string("description");
-            $table->timestamps();
+            $table->timestamps("created_ts")->nullable();
         });
     }
 

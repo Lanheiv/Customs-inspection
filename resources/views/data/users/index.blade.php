@@ -10,11 +10,7 @@
                 <div class="text-xl font-semibold text-stone-700">
                     Lietotājs: {{ $data->full_name ?? $data->username }}
                 </div>
-                @if(auth()->user()->role == "admin")
-                    <div class="text-blue-600 underline"><a href="/admin/user/{{ $data->foreignId }}">rediģēt</a></div>
-                @else
-                    <div class="text-sm text-gray-700">{{ strtoupper($data->role ?? "Nezināma") }}</div>
-                @endif
+                <div class="text-blue-600 underline"><a href="/admin/user/{{ $data->foreignId }}">rediģēt</a></div>
             </div>
 
             <div class="grid grid-cols-2 gap-4 text-sm text-stone-700">

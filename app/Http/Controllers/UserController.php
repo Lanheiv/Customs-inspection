@@ -35,4 +35,10 @@ class UserController extends Controller
 
         return redirect("/data/" . $data->foreignId);
     }
+    public function adminCreate() {
+        return view("data.users.admin-create");
+    }
+    public function adminStore(Requset $request) {
+        
+    }
 }

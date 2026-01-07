@@ -10,10 +10,15 @@ Route::controller(SesstionController::class)->group(function() {
     Route::get("/logout", "destroy")->middleware("auth");
 });
 
-Route::controller(UserController::class)->group(function() {
-    Route::get("/account", "index")->middleware("auth");
-    Route::post("/account", "update")->middleware("auth");
+Route::controller(UserController::class)->middleware('auth')->group(function() {
+    Route::get("/account", "index");
+    Route::post("/account", "update");
 
-    Route::get("/admin/user/{id}", "adminEdit")->middleware("auth");
-    Route::post("/admin/user/{id}", "adminUpdate")->middleware("auth");
+    Route::middleware('rolechecker:admin')->group(function() {
+        Route::get("/admin/user/create", "adminCreate");
+        Route::post("/admin/user/create", "adminStore");
+
+        Route::get("/admin/user/{id}", "adminEdit");
+        Route::post("/admin/user/{id}", "adminUpdate");
+    });
 });
