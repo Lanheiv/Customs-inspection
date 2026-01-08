@@ -98,8 +98,6 @@
             </div>
         </div>
         @if(auth()->user()->foreignId == $user->foreignId && $case->status !== "closed")
-
-        @endif
             <div class="xl:col-span-2 bg-white border border-stone-200 rounded-xl px-6 py-6">
                 <div class="border-b border-stone-100 font-semibold text-stone-700 mb-4"> Lēmums </div>
                 <form action="/data/status/{{ $data->foreignId }}" method="POST">
@@ -123,6 +121,6 @@
                     </div>
                 </form>
             </div>
-
+        @endif
     </div>
 </x-layout>
