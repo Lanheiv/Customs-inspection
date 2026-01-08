@@ -22,6 +22,12 @@
                     <div class="text-gray-500">Pilns vārds</div>
                     <input name="full_name" value="{{ $data->full_name }}" class="w-full border border-stone-300 rounded px-3 py-2">
                 </div>
+                @if(auth()->user()->foreignId == $data->foreignId)
+                    <div>
+                        <div class="text-gray-500">Parole</div>
+                        <input type="password" name="password" class="w-full border border-stone-300 rounded px-3 py-2">
+                    </div>
+                @endif
                 @if(auth()->user()->role == "admin")
                     @if(strtolower($data->role) !== 'admin') <!-- https://www.php.net/manual/en/function.strtolower.php (sūds ks fiksoja visu) -->
                         <div>

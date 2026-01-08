@@ -31,11 +31,15 @@ class DashboardController extends Controller
             return view("inspections-dashboard", compact("insp"));
         }
     }
+
     public function documentsIndex() {
         $doc = Documents::all();
         $veh = Vehicles::all();
         $par = Parties::all();
 
         return view("documents-dashboard", compact("doc", "veh", "par"));
+    }
+    public function documentsCreate() {
+        return view("data.documents.document-create");
     }
 }

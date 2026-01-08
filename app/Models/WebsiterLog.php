@@ -9,10 +9,15 @@ class WebsiterLog extends Model
     protected $fillable = [
         'foreignId',
         'user_id',
+        'IPaddres',
         'table_name',
         'tabel_id',
-        'description'
+        'description',
+        'created_ts'
     ];
+
+    public $timestamps = false;
+
     protected static function boot()
     {
         parent::boot();

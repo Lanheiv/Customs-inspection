@@ -10,9 +10,11 @@
             <div class="text-xl font-semibold text-stone-700">
                 Dokumenti
             </div>
-            <div class="font-semibold text-blue-600 underline">
-                <a href="#">Pievienot dokumentu</a>
-            </div>
+            @if(auth()->user()->role == "broker")
+                <div class="font-semibold text-blue-600 underline">
+                    <a href="/document/create">Pievienot dokumentu</a>
+                </div>
+            @endif
         </div>
         <div class="xl:col-span-2 xl:row-span-4 bg-white border border-stone-200 rounded-xl px-8 py-6">
             <div class="flex justify-between items-center mb-4">
@@ -68,7 +70,7 @@
                 </div>
             </div>
             <div class="overflow-y-auto max-h-[600px]">
-                <table id="users_table" class="min-w-full divide-y divide-stone-200 text-sm text-stone-700">
+                <table id="table" class="min-w-full divide-y divide-stone-200 text-sm text-stone-700">
                     <div class="min-w-full divide-y divide-stone-200 text-sm text-stone-700">
                         <tr>
                             <th class="px-4 py-2 font-medium">ID</th>

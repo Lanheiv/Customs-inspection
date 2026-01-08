@@ -6,12 +6,14 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules\Password;
 
+use App\Helpers\LogActivity;
+
 use App\Models\Users;
 use App\Models\WebsiterLog;
 
 class AdminController extends Controller
 {
-    public function index(Request $userdata) {
+    public function index() {
         $users = Users::all();
         $logs = WebsiterLog::all();
 
@@ -26,20 +28,26 @@ class AdminController extends Controller
         $validated = $request->validate([
             "username" => ["required", "string"],
             "full_name" => ["required", "string"],
-            "role" => ["required", "string"],
-            "active" => ["required", "boolean"],
-            "password" => ["required"],
+            "role" => ["sometimes", "required", "string"],
+            "active" => ["sometimes", "required", "boolean"],
+            "password" => ["sometimes", "required"],
         ]);
 
         if ($request->role === "admin") { return back(); }
 
-        Users::create([
+        $data = Users::create([
             "username" => $validated["username"],
             "full_name" => $validated["full_name"],
             "role" => $validated["role"],
             "active" => $validated["active"],
             "password" => Hash::make($validated["password"])
         ]);
+
+        LogActivity::addToLog(
+            "Created new user " . $validated["username"],
+            "users",
+            $data->foreignId
+        );
 
         return redirect("/admin")->with("userdata", $validated);
     }

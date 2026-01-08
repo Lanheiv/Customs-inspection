@@ -37,16 +37,12 @@
 
   <div class="p-6 grid grid-cols-1 xl:grid-cols-4 gap-6">
     <div class="flex justify-between xl:col-span-4 bg-white border border-stone-200 rounded-xl px-8 py-5">
-      <div class="text-xl font-semibold text-stone-700">
-        Admin panele
-      </div>
-      <div class="font-semibold text-blue-600 underline">
-        <a href="/admin/user/create">Izveidot lietotāju</a>
-      </div>
+      <div class="text-xl font-semibold text-stone-700"> Admin panele </div>
+      <div class="font-semibold text-blue-600 underline"> <a href="/admin/user/create">Izveidot lietotāju</a> </div>
     </div>
     <div class="xl:col-span-2 xl:row-span-4 bg-white border border-stone-200 rounded-xl px-8 py-6">
       <div class="flex justify-between items-center mb-4">
-        <div class="text-stone-700 text-xl font-semibold border-b border-stone-100 pb-2"> Lietotāji </div>
+        <div class="text-stone-700 text-xl font-semibold border-b border-stone-100 pb-2"> Logs </div>
 
         <div class="relative">
             <div class="absolute inset-y-0 left-2 flex items-center pointer-events-none">

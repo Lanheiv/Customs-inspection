@@ -11,7 +11,7 @@
                 Gadijumi
             </div>
         </div>
-        <div class="xl:col-span-3 xl:row-span-8  bg-white border border-stone-200 rounded-xl px-8 py-6">
+        <div class="xl:col-span-4 xl:row-span-8  bg-white border border-stone-200 rounded-xl px-8 py-6">
             <div class="flex justify-between items-center mb-4">
                 <div class="text-stone-700 text-xl font-semibold border-b border-stone-100 pb-2"> Gadijumi </div>
 

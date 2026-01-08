@@ -31,9 +31,7 @@
                 <div class="col-span-2">
                     <div class="text-gray-500">Fails:</div>
                     <div>
-                        <a href="{{ $path ?? '#' }}" class="text-blue-600 underline" target="_blank">
-                            {{ "dokuments šeit" }}
-                        </a>
+                        <a href="{{ $path ?? '#' }}" class="text-blue-600 underline" target="_blank"> dokuments šeit </a>
                     </div>
                 </div>
             </div>
