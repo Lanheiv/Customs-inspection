@@ -6,7 +6,7 @@
   </x-slot:title>
     
   @if(session()->has("userdata"))
-    <script> window.onload=()=>document.getElementById('dialog')?.showModal() </script>
+    <script> window.onload=()=>document.getElementById("dialog")?.showModal() </script>
     
     <el-dialog>
       <dialog id="dialog" aria-labelledby="dialog-title" class="fixed inset-0 size-auto max-h-none max-w-none overflow-y-auto bg-transparent backdrop:bg-transparent">
@@ -45,8 +45,43 @@
       </div>
     </div>
     <div class="xl:col-span-2 xl:row-span-4 bg-white border border-stone-200 rounded-xl px-8 py-6">
-      <div class="border-b border-stone-100 text-stone-700 text-xl font-semibold mb-4 pb-2">
-        Log history
+      <div class="flex justify-between items-center mb-4">
+        <div class="text-stone-700 text-xl font-semibold border-b border-stone-100 pb-2"> Lietotāji </div>
+
+        <div class="relative">
+            <div class="absolute inset-y-0 left-2 flex items-center pointer-events-none">
+              <svg class="w-4 h-4 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M17 10a7 7 0 1 0-14 0 7 7 0 0 0 14 0z"/>
+              </svg>
+            </div>
+
+          <input type="text" id="user_serch" placeholder="serch" class="pl-8 pr-3 py-1.5 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-1"/>
+        </div>
+      </div>
+
+      <div class="overflow-y-auto max-h-[400px]">
+        <table id="users_table" class="min-w-full divide-y divide-stone-200 text-sm text-stone-700">
+          <div class="min-w-full divide-y divide-stone-200 text-sm text-stone-700">
+            <tr>
+              <th class="px-4 py-2 font-medium">ID</th>
+              <th class="px-4 py-2 font-medium">Lietotājs</th>
+              <th class="px-4 py-2 font-medium">IP</th>
+              <th class="px-4 py-2 font-medium">Apraksts</th>
+              <th class="px-4 py-2 font-medium"></th>
+            </tr>
+          </div>
+          <div>
+            @foreach($logs as $logs)
+              <tr class="text-center">
+                <td>{{ $logs->foreignId }}</td>
+                <td>{{ $logs->user_id }}</td>
+                <td>{{ $logs->IPaddres }}</td>
+                <td>{{ $logs->description }}</td>
+                <td class="text-blue-600 underline"><a href="/data/{{ $logs->foreignId }}">detaļas</a></td>
+              </tr>
+            @endforeach
+          </div>
+        </table>
       </div>
     </div>
     <div class="xl:col-span-2 xl:row-span-4 bg-white border border-stone-200 rounded-xl px-8 py-6">
@@ -81,7 +116,7 @@
                 <td>{{ $user->foreignId }}</td>
                 <td>{{ $user->username }}</td>
                 <td>{{ $user->role }}</td>
-                <td>{{ $user->active ? 'aktīvs' : 'neaktīvs' }}</td>
+                <td>{{ $user->active ? "aktīvs" : "neaktīvs" }}</td>
                 <td class="text-blue-600 underline"><a href="/data/{{ $user->foreignId }}">detaļas</a></td>
               </tr>
             @endforeach

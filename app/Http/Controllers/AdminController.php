@@ -7,12 +7,15 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules\Password;
 
 use App\Models\Users;
+use App\Models\WebsiterLog;
 
 class AdminController extends Controller
 {
     public function index(Request $userdata) {
         $users = Users::all();
-        return view("admin.index", compact("users"));
+        $logs = WebsiterLog::all();
+
+        return view("admin.index", compact("users", "logs"));
     }
     public function create() {
         return view("data.users.admin-create");

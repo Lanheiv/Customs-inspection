@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string("category");
             $table->integer("pages");
             $table->string("uploaded_by");
-            $table->timestamps("created_ts")->nullable();
+            $table->timestamp("created_ts")->nullable();
         });
     }
     public function down(): void

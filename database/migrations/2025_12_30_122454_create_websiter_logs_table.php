@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string("table_name");
             $table->string("tabel_id");
             $table->string("description");
-            $table->timestamps("created_ts")->nullable();
+            $table->timestamp("created_ts")->nullable();
         });
     }
 

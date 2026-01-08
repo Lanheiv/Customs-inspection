@@ -77,20 +77,20 @@
             <div class="mb-4">
                 <div class="text-xs text-gray-500">Deklarants:</div>
                 <div class="text-stone-700">
-                    <a class="text-blue-600 underline" href="{{ $partie_declarant?->foreignId }}">{{ $partie_declarant?->name ?? '-' }}</a>
+                    <a class="text-blue-600 underline" href="{{ $partie_declarant?->foreignId }}">{{ $partie_declarant?->name ?? "-" }}</a>
                 </div>
                 <div class="text-sm text-gray-600">
-                    {{ $partie_declarant?->country ?? '' }}
+                    {{ $partie_declarant?->country ?? "" }}
                 </div>
             </div>
 
             <div>
                 <div class="text-xs text-gray-500">Saņēmējs:</div>
                 <div class="text-stone-700">
-                    <a class="text-blue-600 underline" href="{{ $partie_consignee?->foreignId }}">{{ $partie_consignee?->name ?? '-' }}</a>
+                    <a class="text-blue-600 underline" href="{{ $partie_consignee?->foreignId }}">{{ $partie_consignee?->name ?? "-" }}</a>
                 </div>
                 <div class="text-sm text-gray-600">
-                    {{ $partie_consignee?->country ?? '' }}
+                    {{ $partie_consignee?->country ?? "" }}
                 </div>
             </div>
         </div>

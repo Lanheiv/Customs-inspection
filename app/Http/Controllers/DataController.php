@@ -10,6 +10,7 @@ use App\Models\Parties;
 use App\Models\Documents;
 use App\Models\Inspections;
 use App\Models\Users;
+use App\Models\WebsiterLog;
 
 
 class DataController extends Controller
@@ -34,64 +35,77 @@ class DataController extends Controller
                 return back();
             }
         } elseif ($type === "doc") {
-            return $this->documentsIndex($id);
+            if (auth()->user()->role == "admin") {
+                return $this->documentsIndex($id);
+            } else {
+                return back();
+            }
+        } elseif($type === "log") {
+            return $this->logIndex($id);
         } else {
             return redirect("/");
         }
     }
     public function casesIndex($id) {
-        $data = Cases::where('foreignId', $id)->first();
+        $data = Cases::where("foreignId", $id)->first();
         if($data !== null) {
-            $vehicle = Vehicles::where('foreignId', $data->vehicle_id)->first();
-            $partie_declarant = Parties::where('foreignId', $data->declarant_id)->first();
-            $partie_consignee = Parties::where('foreignId', $data->consignee_id)->first();
+            $vehicle = Vehicles::where("foreignId", $data->vehicle_id)->first();
+            $partie_declarant = Parties::where("foreignId", $data->declarant_id)->first();
+            $partie_consignee = Parties::where("foreignId", $data->consignee_id)->first();
 
-            $document = Documents::where('case_id', $data->foreignId)->get();
-            $inspection = Inspections::where('case_id', $data->foreignId)->get();
+            $document = Documents::where("case_id", $data->foreignId)->get();
+            $inspection = Inspections::where("case_id", $data->foreignId)->get();
 
             return view("data.cases.index", compact("data", "vehicle", "partie_declarant", "partie_consignee", "document", "inspection"));
         }
         return redirect("/");
     }
     public function documentsIndex($id) {
-        $data = Documents::where('foreignId', $id)->first();
+        $data = Documents::where("foreignId", $id)->first();
         if($data !== null) {
-            $path = \Storage::url('cases/' . $data->filename);
-            $case = Cases::where('foreignId', $data->case_id)->get();
-            $user = Users::where('username', $data->uploaded_by)->first();
+            $path = \Storage::url("cases/" . $data->filename);
+            $case = Cases::where("foreignId", $data->case_id)->get();
+            $user = Users::where("username", $data->uploaded_by)->first();
 
-            return view('data.documents.index', compact("data", "case", "path", "user"));
+            return view("data.documents.index", compact("data", "case", "path", "user"));
         }
         return redirect("/");
     }
     public function inspectionsIndex($id) {
-        $data = Inspections::where('foreignId', $id)->first();
+        $data = Inspections::where("foreignId", $id)->first();
         if($data !== null) {
-            $case = Cases::where('foreignId', $data->case_id)->first();
-            $user = Users::where('username', $data->assigned_to)->first();
+            $case = Cases::where("foreignId", $data->case_id)->first();
+            $user = Users::where("username", $data->assigned_to)->first();
 
-            return view('data.inspections.index', compact("data", "case", "user"));
+            return view("data.inspections.index", compact("data", "case", "user"));
         }
         return redirect("/");
     }
     public function partiesIndex($id) {
-        $data = Parties::where('foreignId', $id)->first();
+        $data = Parties::where("foreignId", $id)->first();
         if($data !== null) {
-            return view('data.parties.index', compact("data"));
+            return view("data.parties.index", compact("data"));
         }
         return redirect("/");
     }
     public function usersIndex($id) {
-        $data = Users::where('foreignId', $id)->first();
+        $data = Users::where("foreignId", $id)->first();
         if($data !== null) {
-            return view('data.users.user-view', compact("data"));
+            return view("data.users.user-view", compact("data"));
         }
         return redirect("/");
     }
     public function vehiclesIndex($id) {
-        $data = Vehicles::where('foreignId', $id)->first();
+        $data = Vehicles::where("foreignId", $id)->first();
         if($data !== null) {
-            return view('data.vehicles.index', compact("data"));
+            return view("data.vehicles.index", compact("data"));
+        }
+        return redirect("/");
+    }
+    public function logIndex($id) {
+        $data = WebsiterLog::where("foreignId", $id)->first();
+        if($data !== null) {
+            return view("data.log.index", compact("data"));
         }
         return redirect("/");
     }

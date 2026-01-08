@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string("declarant_id");
             $table->string("consignee_id");
             $table->string("vehicle_id");
-            $table->timestamps("created_ts")->nullable();
+            $table->timestamp("created_ts")->nullable();
         });
     }
 

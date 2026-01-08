@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string("password");
             $table->string("role");
             $table->boolean("active");
-            $table->timestamps("created_ts")->nullable();
+            $table->timestamp("created_ts")->nullable();
         });
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {

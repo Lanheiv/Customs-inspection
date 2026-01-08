@@ -6,12 +6,8 @@
     <div class="p-6 grid grid-cols-1 xl:grid-cols-3 gap-6">
         <div class="xl:col-span-3 bg-white border border-stone-200 rounded-xl px-8 py-6">
             <div class="flex justify-between items-center border-b border-stone-100 pb-4 mb-4">
-                <div class="text-xl font-semibold text-stone-700">
-                    Inspekcija {{ $data->foreignId }}
-                </div>
-                <div class="text-sm text-gray-700">
-                    {{ strtoupper($data->type) }}
-                </div>
+                <div class="text-xl font-semibold text-stone-700"> Inspekcija {{ $data->foreignId }} </div>
+                <div class="text-sm text-gray-700"> {{ strtoupper($data->type) }} </div>
             </div>
 
             <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 text-sm text-stone-700">
@@ -25,11 +21,11 @@
                 </div>
                 <div>
                     <div class="text-gray-500">Atrašanās vieta:</div>
-                    <div>{{ $data->location ?? "-" }}</div>
+                    <div>{{ $data->location }}</div>
                 </div>
                 <div>
                     <div class="text-gray-500">Pieprasīja:</div>
-                    <div>{{ $data->requested_by ?? "-" }}</div>
+                    <div>{{ $data->requested_by }}</div>
                 </div>
             </div>
         </div>
@@ -78,8 +74,8 @@
                 @foreach($data->checks as $check)
                     <div class="text-stone-700 text-sm py-2">
                         <div class="pb-2 border-b border-stone-100">
-                            <div class="text-xs text-gray-500">{{ $check["name"] ?? "-" }}:</div>
-                            <div class="">{{ $check["result"] ?? "-" }}</div>
+                            <div class="text-xs text-gray-500">{{ $check["name"] }}:</div>
+                            <div class="">{{ $check["result"] }}</div>
                         </div>
                     </div>
                 @endforeach
@@ -96,7 +92,7 @@
             </div>
 
             <div class="text-sm text-stone-700">
-                {{ $user->full_name ?? "Piešķirts" }}
+                {{ $user->full_name }}
             </div>
         </div>
 

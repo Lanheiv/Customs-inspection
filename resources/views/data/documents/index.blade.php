@@ -7,12 +7,8 @@
 
         <div class="xl:col-span-2 bg-white border border-stone-200 rounded-xl px-8 py-6">
             <div class="flex justify-between items-center border-b border-stone-100 pb-4 mb-4">
-                <div class="text-xl font-semibold text-stone-700">
-                    Dokuments: {{ $data->foreignId }}
-                </div>
-                <div class="text-sm text-gray-700">
-                    {{ strtoupper($data->category ?? "Nezināms") }}
-                </div>
+                <div class="text-xl font-semibold text-stone-700"> Dokuments: {{ $data->foreignId }} </div>
+                <div class="text-sm text-gray-700"> {{ strtoupper($data->category) }} </div>
             </div>
 
             <div class="grid grid-cols-2 gap-4 text-sm text-stone-700">
@@ -26,17 +22,17 @@
                 </div>
                 <div>
                     <div class="text-gray-500">Lapas:</div>
-                    <div>{{ $data->pages ?? "—" }}</div>
+                    <div>{{ $data->pages }}</div>
                 </div>
                 <div>
                     <div class="text-gray-500">Pievienoja:</div>
-                    <div>{{ $user->full_name ?? "—" }}</div>
+                    <div>{{ $user->full_name }}</div>
                 </div>
                 <div class="col-span-2">
                     <div class="text-gray-500">Fails:</div>
                     <div>
                         <a href="{{ $path ?? '#' }}" class="text-blue-600 underline" target="_blank">
-                            {{ "dokuments šeit" ?? "Nav pieejams" }}
+                            {{ "dokuments šeit" }}
                         </a>
                     </div>
                 </div>
