@@ -7,11 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class DataTotal extends Model
 {
     protected $fillable = [
-        'vehicles',
-        'parties',
-        'users',
-        'cases',
-        'inspections',
-        'documents'
+        "vehicles",
+        "parties",
+        "users",
+        "cases",
+        "inspections",
+        "documents"
     ];
 }

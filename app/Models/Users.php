@@ -12,12 +12,12 @@ class Users extends Authenticatable
     public $timestamps = false;
 
     protected $fillable = [
-        'foreignId',
-        'username',
-        'full_name',
-        'password',
-        'role',
-        'active'
+        "foreignId",
+        "username",
+        "full_name",
+        "password",
+        "role",
+        "active"
     ];
 
     protected static function boot()
@@ -26,7 +26,7 @@ class Users extends Authenticatable
 
         static::creating(function ($user) {
             if (empty($user->foreignId)) {
-                $id = static::max('id') + 1;
+                $id = static::max("id") + 1;
                 $user->foreignId = 'usr-' . str_pad($id, 6, '0', STR_PAD_LEFT);; // str_pad aizpilda līdz konkrētam daudzumamam no LEFT  // https://www.php.net/manual/en/function.str-pad.php
             }
         });

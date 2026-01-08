@@ -52,7 +52,7 @@
                     Nav gadijumi
                 </div>
             @endif
+            
         </div>
-
     </div>
 </x-layout>

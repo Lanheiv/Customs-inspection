@@ -11,6 +11,8 @@ use App\Models\Documents;
 use App\Models\Inspections;
 use App\Models\Users;
 use App\Models\WebsiterLog;
+use App\Models\InspectionsResults;
+
 
 
 class DataController extends Controller
@@ -50,13 +52,14 @@ class DataController extends Controller
         $data = Cases::where("foreignId", $id)->first();
         if($data !== null) {
             $vehicle = Vehicles::where("foreignId", $data->vehicle_id)->first();
+            $inspres = InspectionsResults::where("inspection_id", $id)->first();
             $partie_declarant = Parties::where("foreignId", $data->declarant_id)->first();
             $partie_consignee = Parties::where("foreignId", $data->consignee_id)->first();
 
             $document = Documents::where("case_id", $data->foreignId)->get();
             $inspection = Inspections::where("case_id", $data->foreignId)->get();
 
-            return view("data.cases.index", compact("data", "vehicle", "partie_declarant", "partie_consignee", "document", "inspection"));
+            return view("data.cases.index", compact("data", "vehicle", "partie_declarant", "partie_consignee", "document", "inspection", "inspres"));
         }
         return redirect("/");
     }
@@ -74,10 +77,11 @@ class DataController extends Controller
     public function inspectionsIndex($id) {
         $data = Inspections::where("foreignId", $id)->first();
         if($data !== null) {
+            $inspres = InspectionsResults::where("inspection_id", $id)->first();
             $case = Cases::where("foreignId", $data->case_id)->first();
             $user = Users::where("username", $data->assigned_to)->first();
 
-            return view("data.inspections.index", compact("data", "case", "user"));
+            return view("data.inspections.index", compact("data", "case", "user", "inspres"));
         }
         return redirect("/");
     }
